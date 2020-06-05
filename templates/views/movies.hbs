@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movie List</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div class="container">
+  {{>header}}    
+
+
+    <ul class="movie-list">
+      {{#each movies}}
+      <li>{{@key}} {{ movieTitle }}</li>
+      <li>{{ movieYear }}</li>
+      <br>
+      {{/each}}
+    </ul>
+
+
+{{!-- <div class="movie-list">
+  {{#each movies}}
+  <p><strong>Title:</strong>{{ movies.movieTitle }}</p>
+  <p><strong>Year:</strong>{{movies.movieYear}}</p>
+  <br>
+  {{/each}}
+</div> --}}
+
+  <a href="/movies/new">Add movie</a>
+  </div>
+
+  {{>footer}} 
+
+  <script src="/js/movies.js"></script>
+</body>
+</html>
