@@ -23,7 +23,7 @@ app.use(express.json());
 
 
 // movie container
-const movies = []
+const movies = [{movieTitle: "Captain Marvel", movieYear: "2019"}, {movieTitle: "Mohana", movieYear: "2018"}]
 
 
 app.get('/', (req, res) => {
@@ -40,11 +40,6 @@ app.get('/movies', (req, res) => {
     name: 'Ayu Adiati',
     movies: movies
 
-    // try with hard code
-		// movies: {
-    //   movieTitle: 'Moana',
-    //   movieYear: 2016
-    // }
 	});
 })
 
