@@ -1,7 +1,7 @@
 const express = require('express')
+const bodyParser = require('body-parser');
 const hbs = require('hbs')
 const path = require('path')
-// const movies = require('../public/js/movies.js')
 
 
 const app = express()
@@ -18,13 +18,11 @@ app.set('views', viewsPath)
 hbs.registerPartials(partialsPath)
 
 // Setup static directory to serve
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(publicDirectoryPath))
-app.use(express.json());
-
 
 // movie container
-const movies = [{movieTitle: "Captain Marvel", movieYear: "2019"}, {movieTitle: "Mohana", movieYear: "2018"}]
-
+const movies = []
 
 app.get('/', (req, res) => {
   res.render('landing', {
@@ -39,8 +37,7 @@ app.get('/movies', (req, res) => {
 		title: 'Movie Database',
     name: 'Ayu Adiati',
     movies: movies
-
-	});
+  })
 })
 
 app.get('/movies/new', (req, res) => {
