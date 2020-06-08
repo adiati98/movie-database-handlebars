@@ -6,6 +6,3 @@ Movie database with Node JS using Handlebars (hbs) package to render.
 
 `npm install`
 
----
-permalink: /landing.hbs
----
